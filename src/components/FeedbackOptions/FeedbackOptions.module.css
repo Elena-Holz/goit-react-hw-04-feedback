@@ -1,0 +1,14 @@
+.btn {
+    width: 180px;
+    height: 40px;
+    margin-left: 30px;
+    border-radius: 5px;
+    background-color: rgb(217, 217, 234);
+    font-size: 20px;
+}
+
+.listStatistic {
+
+    list-style: none;
+    display: flex;
+}
