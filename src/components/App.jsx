@@ -25,24 +25,25 @@ export function App() {
         }
     }
 
-   const countTotalFeedback = () => {
+    const countTotalFeedback = () => {
        return good + neutral + bad;
         
     }
 
     const countPositiveFeedbackPercentage = () => {
-        const total = countTotalFeedback();
-        if (!total) {
+        const sum = countTotalFeedback();
+        if (!sum) {
             return 0;
         }
 
         const property = good + neutral;
-        const result = (property/ total) * 100;
+        const result = (property/ sum) * 100;
         return Number(result.toFixed(2));
     }
    
     const total = countTotalFeedback();
-     const options = Object.keys(this.state);
+    const positivePercentage = countPositiveFeedbackPercentage();
+     const options = Object.keys({ good, neutral, bad });
    
 
 return (
@@ -66,7 +67,7 @@ return (
                         neutral={neutral}
                         bad={bad}
                         total={total}
-                        positivePercentage={countPositiveFeedbackPercentage}
+                        positivePercentage={positivePercentage}
                     />}
                 </Section>
             </div>
